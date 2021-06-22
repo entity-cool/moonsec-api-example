@@ -42,7 +42,7 @@ fetch(`${ENDPOINT}?key=${APIKey}&antitamper=${AntiTamper}&options=${Options}&byt
     return r.text()
 })
 .then(response => {
-    if (status !== 200) return console.log(`An error occured (${status}) ${response}`)
+    if (status !== 200) return console.log(`An error occurred (${status}) ${response}`)
     const t = Date.now()
     writeFileSync(__dirname + `\\obfuscated\\obf-${t}.lua`, response)
     console.log('Obfuscated, Opening file!')
